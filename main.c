@@ -41,7 +41,7 @@ int main()
         case 3: //Consulta
             printf("Insira o termo de busca do tipo: UFAA/MM/DD\nPor exemplo, para:\nEstado: Goiás, dia: 25/03/2019\nDigite: GO19/03/25\n");
             achou = Consulta(D,I,N);
-            if(achou == 0)
+            if(achou == -1)
                 printf("Termo de busca não encontrado!\n");
             break;
 
@@ -62,4 +62,3 @@ int main()
 
     return 0;
 }
-    

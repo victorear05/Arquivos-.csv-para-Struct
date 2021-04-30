@@ -93,6 +93,7 @@ void Indexar(indexacao *I, dados_cov *D, int N){
     int i, trocou = 1, auxI;
     char aux[10];
     int comp;
+    
     for(i = 0; i < N-1;i++){
         strcpy(I[i].Chave, D[i].Codg);
         I[i].posicao = i;
@@ -113,25 +114,32 @@ void Indexar(indexacao *I, dados_cov *D, int N){
             }
         }
     }
-/*
+
     for(i = 0;i < N-1;i++){
         printf("%s -> %d\n", I[i].Chave, I[i].posicao);
     }
-*/
+
     printf("Arquivo Indexado com sucesso!\n");
 }
 int Consulta(dados_cov *D, indexacao *I, int N){
 
+    int c;
     int j;
-    int achou = 0;
+    int Encontrado = -1;
     char comp[11];
-
+    int esquerda = 0;
+    int direita = N-2;
+    int meio;
     scanf("%s", comp);
 
-    for(int i = 0;i < N-1;i++){
-        achou = strcmp(comp, I[i].Chave);
-        j = I[i].posicao;
-        if(achou == 0){
+    while(esquerda <= direita && Encontrado == -1){
+        
+        meio = (esquerda + direita)/2;
+        
+        c = strcmp(I[meio].Chave, comp);
+        
+        if (c == 0){
+            j = I[meio].posicao;
             printf("\n");
             printf("Região: %s\n", D[j].Regiao);
             printf("UF: %s\n", D[j].UF);
@@ -143,10 +151,13 @@ int Consulta(dados_cov *D, indexacao *I, int N){
             printf("Óbitos Acumulados: %d\n", D[j].Dados[4]);
             printf("Óbitos Novos: %d\n", D[j].Dados[5]);
             printf("\n");
-            return 1;
+            Encontrado = 0;
         }
+        else if(c < 0)
+            esquerda = meio + 1;
+        else
+            direita = meio - 1;
     }
 
-    achou = 0;
-    return achou;
+    return Encontrado;
 }
