@@ -8,4 +8,4 @@ Esse algoritmo se baseia em:
   
 Com alguns ajustes o programa pode ser usado para outros modelos de .csv  
   
-**Este programa foi criado para uma atividade prática de ler um arquivo de relatório sobre COVID-19**  
+**Este programa foi criado para uma atividade prática de ler um arquivo de relatório com dados sobre COVID-19, em modelo .csv**  
