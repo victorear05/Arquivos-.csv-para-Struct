@@ -6,4 +6,6 @@ Esse algoritmo se baseia em:
 3 - Ordenar os dados da struct indexada  
 4 - A partir do código fazer uma busca binária na struct Indexada, ler sua posição, e mostrar os dados da struct que possui tal código  
   
-Com alguns ajustes o programa pode ser usado para outros modelos de .csv
+Com alguns ajustes o programa pode ser usado para outros modelos de .csv  
+  
+**Este programa foi criado para uma atividade prática de ler um arquivo de relatório sobre COVID-19**  
